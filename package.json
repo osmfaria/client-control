@@ -1,20 +1,27 @@
 {
   "name": "client-control",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "repository": "git@github.com:osmfaria/client-control.git",
+  "author": "Osmar Faria <osm.faria@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typeorm": "^0.3.10",
+    "typescript": "^4.8.3",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.7.18",
+    "@types/uuid": "^8.3.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/osmfaria/client-control.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/osmfaria/client-control/issues"
-  },
-  "homepage": "https://github.com/osmfaria/client-control#readme"
+    "dev": "ts-node-dev --ignore-watch node_modules src/app.ts",
+    "typeorm": "typeorm-ts-node-commonjs"
+  }
 }
