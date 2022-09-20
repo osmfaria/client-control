@@ -8,7 +8,7 @@ const createClientService = async ({
     name,
     email,
     phone,
-}: IClient):Promise<IClientReturn> => {
+}: IClient):Promise<Client> => {
     const clientRepository = AppDataSource.getRepository(Client)
 
     const emailAlreadyExist = await clientRepository.findOne({ where: {email: email}})
@@ -21,7 +21,7 @@ const createClientService = async ({
 
     const created_at = new Date()
 
-    const newClient = clientRepository.save({
+    const newClient = await clientRepository.save({
         name,
         email,
         phone,

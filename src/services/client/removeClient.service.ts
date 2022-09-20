@@ -13,7 +13,6 @@ const removeClientService = async ( id: string ): Promise<void> => {
         throw new AppError("No client found for given id", 404)
     }
 
-
     await clientRepository
     .createQueryBuilder()
     .delete()

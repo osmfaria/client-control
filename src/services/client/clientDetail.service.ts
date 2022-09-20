@@ -1,10 +1,9 @@
 import { AppDataSource } from "../../data-source";
 import { Client } from "../../entities/client.enitity";
 import { AppError } from "../../errors/appError";
-import { IClientReturn } from "../../interfaces/client";
 
 
-const clientDetailService = async (id: string): Promise<IClientReturn | null> => {
+const clientDetailService = async (id: string): Promise<Client | null> => {
     const clientRepository = AppDataSource.getRepository(Client)
 
     const client = clientRepository.findOneBy({ id: id })
