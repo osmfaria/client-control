@@ -13,13 +13,13 @@ export class Contact {
   @PrimaryGeneratedColumn('uuid')
   readonly id: string
 
-  @Column()
+  @Column({ length: 250 })
   name: string
 
-  @Column()
+  @Column({ length: 120, unique: true })
   email: string
 
-  @Column()
+  @Column({ length: 60, unique: true })
   phone: string
 
   @ManyToOne(() => Client, { onDelete: 'CASCADE' })
