@@ -1,12 +1,12 @@
 import { AppDataSource } from "../../data-source";
 import { Client } from "../../entities/client.enitity";
-import { IClientReturn } from "../../interfaces/client";
+import { IPagination } from "../../interfaces/pagination";
 
 
-const listClientsService = async (): Promise<Client[]> => {
+const listClientsService = async ({ page, limit }: IPagination): Promise<Client[]> => {
     const clientRepository = AppDataSource.getRepository(Client)
 
-    const clients = await clientRepository.find()
+    const clients = await clientRepository.createQueryBuilder().skip((page - 1) * limit).take(limit).getMany()
 
     return clients
 }

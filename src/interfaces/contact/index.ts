@@ -5,16 +5,23 @@ export interface IContact {
   client_id: string
 }
 
-export interface IContactResponse {
-  id: string
-  name: string
-  email: string
-  phone: string
-}
-
 export interface IContactUpdate {
   id?: string
   name?: string
   email?: string
   phone?: string
 }
+
+export interface IContactCreate {
+  name: string
+  email: string
+  phone: string
+}
+
+export interface IContactUpdateForSchema {
+  name?: string
+  email?: string
+  phone?: string
+}
+
+

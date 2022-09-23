@@ -12,6 +12,9 @@ export class Client {
   @Column({ length: 120, unique: true })
   email: string
 
+  @Column({ length: 128})
+  password?: string
+  
   @Column({ length: 60, unique: true })
   phone: string
 

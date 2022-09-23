@@ -1,5 +1,4 @@
 import { AppDataSource } from '../../data-source'
-import { Client } from '../../entities/client.enitity'
 import { Contact } from '../../entities/contact.entity'
 import { AppError } from '../../errors/appError'
 

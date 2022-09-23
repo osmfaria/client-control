@@ -1,15 +1,13 @@
-import { IContactResponse } from "../contact"
-
 export interface IClient {
     name: string
     email: string
+    password: string
     phone: string
 }
 
-export interface IClientReturn {
-  name: string
-  email: string
-  phone: string
-  contacts: IContactResponse[]
-  created_at: Date
+export interface IClientUpdate {
+  name?: string
+  password?: string
+  email?: string
+  phone?: string
 }
