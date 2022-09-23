@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: client-control
+    build: .
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    environment:
+      - IS_COMPOSE=true
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    container_name: db
+    image: postgres:14.4-alpine
+    ports:
+      - 5431:5432
+    env_file:
+      - ./.env
+    environment:
+      - ./.env
+
+      
